@@ -1,5 +1,5 @@
 # DataScience
-Data Science Projects
+R Data Science Projects
 
 Still in progress...
 
