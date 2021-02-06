@@ -1,0 +1,68 @@
+#####################################
+
+# Data Science.                     # 
+# Exploratory Data Analysis in R.   #
+
+# Will use the Iris dataset         #
+
+# Refer to uploaded pdf regarding   #
+#the references for this project.   #
+
+#####################################
+
+
+
+# Load the Dataset.
+
+
+library(datasets)
+data(iris)
+# View(iris)
+# class(iris)
+
+iris2 <- datasets::iris
+
+
+# View the Data & Import the Data into the Environment.
+View(iris)
+
+# Can assign the column contents to variables.
+species <- iris$Species
+sepalLength <- iris$Sepal.Length
+sepalWidth <- iris$Sepal.Width
+petalLength <- iris$Petal.Length
+petalWidth <- iris$Petal.Width
+
+
+
+# Summary Statistics.
+
+
+# head() / tail()
+head(iris, 5) # This gives the first 5 lines of the dataset.
+tail(iris, 5) # This gives the last 5 lines of the dataset.
+
+
+#summary()
+summary(iris)
+summary(iris$Sepal.Length) # Summary stats of a certain column / variable.
+
+
+# Check if there is any missing data.
+sum(is.na(iris))
+
+
+
+# 'skimr()' - This expands on 'summary()' by providing a larger set of statistics.
+# install.packages("skimr")
+# https://github.com/ropensci/skimr
+
+library(skimr)
+
+skim(iris) # This displays a more expanded summary of stats regarding the dataset.
+
+# Will group the data by species, then perform skim.
+iris %>%
+  dplyr::group_by(Species) %>%
+  skim()
+
