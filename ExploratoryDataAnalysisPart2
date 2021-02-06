@@ -1,0 +1,42 @@
+# Quick data visualization.
+
+# R base plot().
+
+
+# Panel Plots.
+plot(iris)
+#plot(iris, col= 'red')
+#plot(iris, col = 'yellow')
+plot(iris, col='grey')
+
+
+# Scatter Plot.
+plot(iris$Sepal.Width, iris$Sepal.Length)
+
+#plot(iris$Sepal.Width, iris$Sepal.Length, col="red") # Adds red circles.
+plot(iris$Sepal.Width, iris$Sepal.Length, col = 'blue')
+
+#plot(iris$Sepal.Width, iris$Sepal.Length, col="red", 
+     #xlab = "Sepal Width", ylab = "Sepal Length")
+# Adds red circles and x - & y-axis labels.
+
+plot(iris$Sepal.Width, iris$Sepal.Length, col = 'blue',
+     xlab = "Sepal Width", ylab = "Sepal Length")
+
+
+# Histogram.
+hist(iris$Sepal.Width)
+
+hist(iris$Sepal.Width, col="red") # Adds red bars.
+
+hist(iris$Sepal.Length, col ="orange")
+
+# Feature plots
+# https://www.machinelearningplus.com/machine-learning/caret-package/
+featurePlot(x = iris[,1:4], 
+            y = iris$Species, 
+            plot = "box",
+            strip=strip.custom(par.strip.text=list(cex=.7)),
+            scales = list(x = list(relation="free"), 
+                          y = list(relation="free")))
+
